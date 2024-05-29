@@ -75,7 +75,3 @@ Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue en el reposit
 ---
 
 _Disclaimer: Este repositorio es solo para fines educativos y no pretende ser una referencia exhaustiva sobre programación orientada a objetos en Java._
-
-```
-
-```
