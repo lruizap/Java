@@ -1,10 +1,10 @@
-### Enunciado del Ejercicio:
+# Enunciado del Ejercicio:
 
-#### Sistema de Gestión de Animales en un Refugio
+## Sistema de Gestión de Animales en un Refugio
 
 **Objetivo:** Crear un sistema de gestión de animales en un refugio utilizando la programación orientada a objetos en Java. El sistema gestionará diferentes tipos de animales (Perro y Gato), heredando de una clase base `Animal`. También incluirá una clase `Refugio` que gestionará la adición y visualización de animales en el refugio.
 
-#### Instrucciones:
+### Instrucciones:
 
 1. **Clase `Animal` (Clase base)**:
 
