@@ -15,7 +15,7 @@ public class Persona {
         this.identificador = rand.nextInt(10000);
         this.nombre = "";
         this.edad = 0;
-        this.ingresos = 0.0;
+        this.ingresos = 10000.0 * rand.nextDouble();
         this.esProgenitor = false;
     }
 

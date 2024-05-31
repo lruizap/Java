@@ -19,7 +19,7 @@ public class Familia {
         this.direccion = "";
         this.esNumerosa = false;
         this.esMonoparental = false;
-        this.ingresosMensuales = 0.0;
+        this.ingresosMensuales = 10000.0 * rand.nextDouble();;
         this.personas = new Persona[0];
     }
 
