@@ -1,20 +1,18 @@
-package usuarios.example;
+package tienda;
 
 import java.sql.*;
 import java.util.Scanner;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
-    private static final String DB_URL = "jdbc:sqlite:usuarios.db";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/Tienda";
+    private static final String USER = "root";
+    private static final String PASS = "tu_contraseña";
 
     public static void main(String[] args) {
-        try (Connection conn = DriverManager.getConnection(DB_URL)) {
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
             if (conn != null) {
-                System.out.println("Conexión exitosa a la base de datos SQLite.");
+                System.out.println("Conexión exitosa a la base de datos MySQL.");
                 interactuarConBaseDeDatos(conn);
             }
         } catch (SQLException e) {
@@ -32,7 +30,7 @@ public class App
             System.out.println("2. Ver datos de una tabla");
             System.out.println("3. Modificar datos");
             System.out.println("4. Crear un nuevo registro");
-            System.out.println("5. Eliminar un nuevo registro");
+            System.out.println("5. Eliminar un registro");
             System.out.println("6. Salir");
 
             int opcion = scanner.nextInt();
@@ -68,11 +66,11 @@ public class App
     }
 
     private static void verTablas(Connection conn) {
-        String query = "SELECT name FROM sqlite_master WHERE type='table'";
+        String query = "SHOW TABLES";
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             System.out.println("Tablas en la base de datos:");
             while (rs.next()) {
-                System.out.println(rs.getString("name"));
+                System.out.println(rs.getString(1));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -194,7 +192,7 @@ public class App
         }
     }
 
-    private static void eliminarRegistro(Connection conn, Scanner scanner){
+    private static void eliminarRegistro(Connection conn, Scanner scanner) {
         System.out.print("Ingrese el nombre de la tabla: ");
         String tabla = scanner.nextLine();
 
@@ -202,11 +200,11 @@ public class App
         String condicion = scanner.nextLine();
 
         String query = "DELETE FROM " + tabla + " WHERE " + condicion;
-        try(PreparedStatement pstmt = conn.prepareStatement(query)) {
+        try (PreparedStatement pstmt = conn.prepareStatement(query)) {
             int filasAfectadas = pstmt.executeUpdate();
             System.out.println("Filas afectadas: " + filasAfectadas);
         } catch (SQLException e) {
-                e.printStackTrace();
+            e.printStackTrace();
         }
     }
 }
