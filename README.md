@@ -1,4 +1,4 @@
-# README - Ejercicios y Explicaciones sobre Objetos en Java
+# README - Ejercicios y Explicaciones sobre Objetos y Base de Datos en Java
 
 ¡Bienvenido al repositorio de archivos Java dedicados a explicar y practicar el uso de objetos! Este repositorio contiene tanto explicaciones teóricas como ejercicios prácticos diseñados para ayudarte a comprender mejor el concepto de objetos en Java.
 
