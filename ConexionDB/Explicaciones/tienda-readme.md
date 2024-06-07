@@ -1,6 +1,6 @@
 # Código Java
 
-### Estructura del Código
+## Estructura del Código
 
 El código se encuentra en el archivo `App.java` y realiza las siguientes operaciones:
 
