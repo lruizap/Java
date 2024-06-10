@@ -5,12 +5,10 @@ import java.util.Scanner;
 
 public class App 
 {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/Tienda";
-    private static final String USER = "root";
-    private static final String PASS = "tu_contraseña";
+    private static final String DB_URL = "jdbc:sqlite:tienda.db";
 
     public static void main(String[] args) {
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
+        try (Connection conn = DriverManager.getConnection(DB_URL)) {
             if (conn != null) {
                 System.out.println("Conexión exitosa a la base de datos MySQL.");
                 interactuarConBaseDeDatos(conn);
